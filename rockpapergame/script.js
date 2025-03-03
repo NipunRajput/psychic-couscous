@@ -1,8 +1,9 @@
 const rockbtn=document.getElementById('rock');
 const paperbtn=document.getElementById('paper');
 const scissorbtn=document.getElementById('scissor');
-const playerscr=document.getElementById('player');
-const computerscr=document.getElementById('computer');
+const playerscr=document.getElementById('pl1');
+const computerscr=document.getElementById('pl2');
+const finalrslt=document.getElementById('result');
 
 rockbtn.addEventListener('click',rockfirst);
 paperbtn.addEventListener('click',paperfirst);
@@ -14,20 +15,23 @@ function rockfirst(){
     let chosen=Computer();
     console.log("Player chose:", result);
     console.log("Computer chose:", chosen);
+    let outcome="";
     switch (chosen){
         case "rock":
-            console.log("tie");
+            outcome="It's a Tie";
             break;
         case "scissor":
-            console.log("Player Wins");
+            outcome="You Win!!, Rock Destroys Scissor";
             playercount++;
             break;
         case "paper":
-            console.log("Computer Wins");
+            outcome="You Lost!!, Paper catches the Rock";
             computercount++;
             break;
     }
-    return computercount, playercount;
+    finalrslt.textContent=outcome;
+    playerscr.textContent=playercount;
+    computerscr.textContent=computercount;
 }
 
 function paperfirst(){
@@ -35,20 +39,23 @@ function paperfirst(){
     let chosen=Computer();
     console.log("Player chose:", result);
     console.log("Computer chose:", chosen);
+    let outcome="";
     switch (chosen){
         case "rock":
-            console.log("Player Wins");
+            outcome="You Win!!, Paper catches Rock";
             playercount++;
             break;
         case "scissor":
-            console.log("Computer Wins");
+            outcome="You Lost!!, Scissor cuts paper";
             computercount++;
             break;
         case "paper":
-            console.log("Tie");
+            outcome="It's a Tie";
             break;
     }
-    return computercount, playercount;
+    finalrslt.textContent=outcome;
+    playerscr.textContent=playercount;
+    computerscr.textContent=computercount;
 }
 
 function scissorfirst(){
@@ -56,20 +63,23 @@ function scissorfirst(){
     let chosen=Computer();
     console.log("Player chose:", result);
     console.log("Computer chose:", chosen);
+    let outcome="";
     switch (chosen){
         case "rock":
-            console.log("Computer Wins");
+            outcome="You Lost!!, Scissor destroyed by Rock";
             computercount++;
             break;
         case "scissor":
-            console.log("Tie");
+            outcome="It's a Tie";
             break;
         case "paper":
-            console.log("Player Wins");
+            outcome="You Win!!, Scissor Cuts Paper"
             playercount++;
             break;
     }
-    return computercount, playercount;
+    finalrslt.textContent=outcome;
+    playerscr.textContent=playercount;
+    computerscr.textContent=computercount;
 }
 
 function Computer(){
