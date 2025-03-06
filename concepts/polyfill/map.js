@@ -26,3 +26,4 @@ const store2=arr2.myMap(r2=>r2*2);
 console.log(store2);
 
 
+
