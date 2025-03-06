@@ -13,15 +13,16 @@ if(!Array.prototype.myMap){
     Array.prototype.myMap=function(userFn){
         const newarr=[];
         for(let i=0;i<this.length;i++){
-            const up=userFn(this[i],i);
+            const up=userFn(this[i]);
             newarr.push(up)
         }
         return newarr;
     }
 }
 
-const arr2=[5,2,3,4,5];
+const arr2=[4,2,3,4,5];
 
 const store2=arr2.myMap(r2=>r2*2);
 console.log(store2);
+
 
