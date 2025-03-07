@@ -17,7 +17,7 @@ if(!Array.prototype.pushit){
 }
 const array=[4,5,6];
 array.pushit(8);
-console.log(array);
+console.log(array); 
 
 
 
