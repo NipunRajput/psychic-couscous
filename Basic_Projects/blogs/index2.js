@@ -18,3 +18,8 @@ if(!Array.prototype.newMap){
 const arr2=[1,2,3,4];
 const newArrr=arr2.newMap(arr2=>arr2*3);// The .map() function is defined
 console.log(newArrr);
+
+
+
+
+
